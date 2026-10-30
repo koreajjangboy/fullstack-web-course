@@ -1,0 +1,29 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.container {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* 💡 반응형 유동 크기 핵심 패턴 */
+    width: 100%;             /* 모바일 등 좁은 화면에서는 가득 채우기 */
+    max-width: 1200px;        /* 데스크톱 등 넓은 화면에서는 최대 800px로 제한 */
+    margin: 0 auto;          /* 넓은 화면에서 좌우 여백을 균등하게 주어 가운데 정렬 */
+    box-sizing: border-box;  /* 패딩 때문에 박스가 커지는 현상 방지 */
+}
+
+h1 {
+    color: #2563eb;
+    font-size: 24px;
+}
+
+p {
+    color: #4b5563;
+    line-height: 1.6;
+}

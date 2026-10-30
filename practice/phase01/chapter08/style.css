@@ -1,0 +1,98 @@
+/* 1. 기본 설정 및 초기화 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* 2. 전체를 감싸는 카드 형태의 컨테이너 */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 3. 제목 스타일 */
+h1 {
+    font-size: 24px;
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #0056b3;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* 4. 입력창 및 버튼 영역 정렬 */
+/* 입력창과 버튼을 나란히 배치하고 간격을 보기 좋게 조절합니다 */
+input[id="name"],
+input[id="age"] {
+    width: calc(50% - 35px);
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    margin-right: 8px;
+    margin-bottom: 15px;
+    transition: border-color 0.2s;
+}
+
+input[id="name"]:focus,
+input[id="age"]:focus {
+    border-color: #0056b3;
+}
+
+/* 확인 버튼 스타일 (페이지 포인트 컬러인 파란색 계열 적용) */
+input[type="button"]#btn {
+    width: 60px;
+    height: 44px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0056b3;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type="button"]#btn:hover {
+    background-color: #004085;
+}
+
+/* 5. 인사말 박스 스타일 */
+#greeting-box {
+    margin-bottom: 25px;
+    font-size: 15px;
+    color: #333;
+}
+
+/* 6. 리스트(목록) 스타일 */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background: #e9ecef;
+    margin-bottom: 8px;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+}

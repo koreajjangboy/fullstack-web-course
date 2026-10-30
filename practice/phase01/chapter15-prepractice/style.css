@@ -1,0 +1,137 @@
+/* 기본 초기화 및 레이아웃 설정 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* 최대 폭 1000px 및 가운데 정렬 */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  max-width: 1000px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #222;
+}
+
+/* Panel 형태의 영역 구분 */
+section {
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  color: #495057;
+  border-bottom: 2px solid #f1f3f5;
+  padding-bottom: 8px;
+}
+
+/* 입력 Form 세로 배치 */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #4c6ef5;
+}
+
+button[type="submit"] {
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #4c6ef5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button[type="submit"]:hover {
+  background-color: #3b5bdb;
+}
+
+/* 상태 메시지 및 상세 영역 스타일 */
+#status-message,
+#book-detail,
+#form-message {
+  padding: 12px;
+  background-color: #f1f3f5;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #495057;
+  margin-top: 12px;
+}
+
+/* 검색 결과 목록 (한 줄 카드 형태) */
+#book-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+#book-list li {
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+#book-list li:hover {
+  background-color: #f1f3f5;
+  border-color: #adb5bd;
+}
+
+/* 모바일 700px 이하 대응 (한 열 구조 유지 및 여백 조정) */
+@media (max-width: 700px) {
+  body {
+    padding: 10px;
+  }
+  
+  section {
+    padding: 16px;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    align-self: stretch;
+  }
+}

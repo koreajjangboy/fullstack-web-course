@@ -1,0 +1,51 @@
+/* 루트(html) 글자 크기 기준 설정 (기본값은 보통 16px) */
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    background-color: #f1f5f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 💡 vw (Viewport Width)와 vh (Viewport Height) 활용 예시 */
+.hero-banner {
+    width: 100vw;            /* 뷰포트 너비의 100% 가득 채우기 */
+    height: 25vh;            /* 뷰포트 높이의 25%만 차지하기 */
+    background-color: #2563eb;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-banner h1 {
+    font-size: 2rem;         /* 루트 크기(16px)의 2배 = 32px */
+    margin: 0;
+}
+
+/* 💡 %와 max-width 패턴 + rem 단위 활용 예시 */
+.container {
+    width: 90%;              /* 모바일 등 좁은 화면에서는 좌우 여백을 빼고 90% 공간 차지 */
+    max-width: 800px;        /* 데스크톱 등 넓은 화면에서는 최대 800px까지만 늘어남 */
+    margin: 40px auto;       /* 위아래 40px 여백, 좌우 auto로 화면 중앙 정렬 */
+    
+    background-color: white;
+    padding: 2.5rem;         /* rem 단위를 사용해 일정한 내부 여백 설정 (16px * 2.5 = 40px) */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;  /* 패딩 때문에 박스가 삐져나가는 현상 방지 */
+}
+
+.container h2 {
+    font-size: 1.75rem;      /* 16px * 1.75 = 28px */
+    color: #1e293b;
+    margin-top: 0;
+}
+
+.container p {
+    font-size: 1rem;         /* 16px */
+    color: #475569;
+    line-height: 1.6;        /* 줄 간격 */
+}

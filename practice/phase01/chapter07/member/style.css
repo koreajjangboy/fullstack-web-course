@@ -1,0 +1,147 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f8fafc;
+}
+
+/* 1. 기본 (모바일 화면): 사이드바를 유연하게 혹은 전체 폭으로 처리 */
+.admin-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* 모바일에서는 세로로 쌓이도록 설정할 수도 있습니다 */
+    min-height: 100vh;
+}
+
+/* 사이드바 디자인 */
+.sidebar {
+    background-color: #0f172a;
+    color: white;
+    padding: 24px;
+}
+
+.sidebar h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+}
+
+.sidebar a {
+    color: #94a3b8;
+    text-decoration: none;
+    display: block;
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #1e293b;
+    color: white;
+}
+
+/* 메인 콘텐츠 영역 */
+.main-content {
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+/* 2. 상단 툴바 (Flexbox 활용) */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+
+.toolbar input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.toolbar input:focus {
+    border-color: #2563eb;
+}
+
+.btn-register {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-register:hover {
+    background-color: #1d4ed8;
+}
+
+/* 3. 회원 카드 목록 (Grid 활용) */
+.member-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 작은 화면에서는 한 줄에 1개의 열만 배치 */
+    gap: 16px;                  /* 카드 사이의 간격 */
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+    color: #1e293b;
+}
+
+.card p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.container {
+    width: 90%;             /* 화면이 좁아지면 컨테이너도 같이 줄어듭니다 */
+    max-width: 1200px;      /* 화면이 아주 넓어져도 콘텐츠 폭이 1200px을 넘지 않습니다 */
+    margin: 0 auto;         /* 넓은 화면에서 양옆 여백을 균등하게 주어 가운데 정렬합니다 */
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .member-grid {
+        grid-template-columns: repeat(2, 1fr); /* 768px 이상일 때 2열로 변경 */
+    }
+
+    .admin-layout {
+        grid-template-columns: 180px 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .member-grid {
+        grid-template-columns: repeat(3, 1fr); /* 1024px 이상일 때 3열로 변경 */
+    }
+
+    .admin-layout {
+        grid-template-columns: 250px 1fr;
+    }
+}

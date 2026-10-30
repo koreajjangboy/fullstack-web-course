@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Book Explorer</h1>
+  </header>
+
+  <main>
+    <!-- 1. 도서 검색 섹션 -->
+    <section>
+      <h2>도서 검색</h2>
+      <form id="search-form">
+        <input type="text" id="search-input" name="keyword" placeholder="검색어를 입력하세요" required>
+        <button type="submit">검색</button>
+      </form>
+      
+      <!-- 3. 상태 메시지 -->
+      <div id="status-message">검색어를 입력하세요.</div>
+
+      <!-- 4. 검색 결과 목록 -->
+      <ul id="book-list"></ul>
+    </section>
+
+    <!-- 5. 도서 상세 섹션 -->
+    <section>
+      <h2>도서 상세</h2>
+      <div id="book-detail">도서를 선택하세요.</div>
+    </section>
+
+    <!-- 6. 도서 등록 요청 Form 섹션 -->
+    <section>
+      <h2>도서 등록 요청</h2>
+      <form id="book-form">
+        <input type="text" name="title" placeholder="도서 제목" required>
+        <input type="text" name="author" placeholder="저자" required>
+        <button type="submit">등록 요청</button>
+      </form>
+      
+      <!-- 7. 등록 결과 메시지 -->
+      <div id="form-message"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

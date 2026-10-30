@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- STEP 02: 모바일 브라우저가 장치 너비를 올바르게 인식하도록 하는 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원관리 페이지 — Chapter 07</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="admin-layout">
+        <!-- 사이드바 -->
+        <aside class="sidebar">
+            <h2>관리자 메뉴</h2>
+            <ul>
+                <li><a href="#" class="active">회원 목록</a></li>
+                <li><a href="#">권한 관리</a></li>
+                <li><a href="#">통계 설정</a></li>
+            </ul>
+        </aside>
+
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <!-- 상단 검색 및 등록 툴바 (Flexbox 활용) -->
+            <div class="toolbar">
+                <input type="text" placeholder="회원 이름 또는 이메일 검색..." />
+                <button class="btn-register">신규 등록</button>
+            </div>
+
+            <!-- 회원 카드 목록 (Grid 활용) -->
+            <div class="member-grid">
+                <div class="card">
+                    <h3>김철수</h3>
+                    <p>chulsoo@example.com</p>
+                </div>
+                <div class="card">
+                    <h3>이영희</h3>
+                    <p>younghee@example.com</p>
+                </div>
+                <div class="card">
+                    <h3>박민수</h3>
+                    <p>minsoo@example.com</p>
+                </div>
+                <div class="card">
+                    <h3>정지은</h3>
+                    <p>jieun@example.com</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

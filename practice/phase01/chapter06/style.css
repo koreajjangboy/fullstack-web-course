@@ -1,0 +1,42 @@
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 16px;
+}
+
+.toolbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.toolbar input {
+    flex: 1;
+    padding: 10px;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+}
+
+.member-card {
+    padding: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    background: white;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
