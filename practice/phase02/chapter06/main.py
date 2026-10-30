@@ -10,6 +10,7 @@ class MemberResponse(BaseModel):
     email: str
     age: int
 
+// GET
 @app.get("/members", response_model=list[MemberResponse])
 def get_members():
     with get_connection() as conn:
