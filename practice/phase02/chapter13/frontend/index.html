@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Member API Test</title>
+</head>
+<body>
+    <h1>회원 목록 조회 테스트</h1>
+    <button onclick="loadMembers()">회원 목록 불러오기</button>
+    <div id="result"></div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:8081';
+
+        async function loadMembers() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/members`);
+                if (!response.ok) {
+                    throw new Error(`HTTP 에러! 상태 코드: ${response.status}`);
+                }
+                const members = await response.json();
+                console.log("받아온 회원 데이터:", members);
+                
+                // 화면에 간단히 출력
+                document.getElementById('result').innerText = JSON.stringify(members, null, 2);
+            } catch (error) {
+                console.error("API 호출 실패:", error);
+            }
+        }
+    </script>
+</body>
+</html>

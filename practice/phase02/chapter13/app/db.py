@@ -1,23 +1,22 @@
+import os
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy.orm import sessionmaker, DeclarativeBase
 
-# SQLite 데이터베이스 파일 경로 설정 (chapter13 폴더 내에 test.db 생성)
-SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
+# phase02 상위 폴더의 .env 파일을 로드합니다 (필요시 경로 조정)
+load_dotenv(dotenv_path="../.env")
 
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, 
-    connect_args={"check_same_thread": False}
+DATABASE_URL = (
+    f"postgresql+psycopg://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
+    f"@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
 )
 
-SessionLocal = sessionmaker(
-    autocommit=False, 
-    autoflush=False, 
-    bind=engine
-)
+engine = create_engine(DATABASE_URL, echo=True)
+SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 
-Base = declarative_base()
+class Base(DeclarativeBase):
+    pass
 
-# FastAPI 의존성 주입(Depends)용 get_db 함수
 def get_db():
     db = SessionLocal()
     try:
