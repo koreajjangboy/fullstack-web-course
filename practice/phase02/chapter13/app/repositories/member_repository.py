@@ -19,7 +19,8 @@ def create_member(db: Session, payload: MemberCreate):
     db_member = Member(
         name=payload.name,
         email=payload.email,
-        age=payload.age
+        age=payload.age,
+        gender=payload.gender  # 💡 성별 필드 추가
     )
     db.add(db_member)
     db.commit()
@@ -31,6 +32,7 @@ def update_member(db: Session, member: Member, payload: MemberUpdate):
     member.name = payload.name
     member.email = payload.email
     member.age = payload.age
+    member.gender = payload.gender  # 💡 성별 필드 추가
     db.commit()
     db.refresh(member)
     return member
